@@ -2,6 +2,8 @@
 /// <reference path="../../scripts/typings/bootstrap/bootstrap.d.ts" />
 /// <reference path="../../scripts/typings/jquery.pnotify/jquery.pnotify.d.ts" />
 /// <reference path="../../scripts/typings/jquery.datatables/jquery.datatables.d.ts" />
+
+
 class Index {
     private divTeste1: JQuery = $("#divTeste1");
     private divTeste2: JQuery = $("#divTeste2");
@@ -12,6 +14,7 @@ class Index {
     private lnkTeste3: JQuery = $("#lnkTeste3");
 
     constructor() {
+
         $([this.lnkTeste1]).editable({
             mode: "inline",
             send: "always",
@@ -97,28 +100,60 @@ class Index {
         this.divTeste3.text("assadsad");
     }
     ErrorAlert2() {
-        this.divTeste4.alert().addClass("alert alert-error");
+        this.divTeste4.alert().addClass("alert alert-danger");
         this.divTeste4.text("assadsad");
     }
     InfoAlert() {
-        $.pnotify({ type: "info", text: this.divTeste1.text(), title: "info" });
+        new PNotify({
+            title: 'PIcon',
+            text: 'I have an icon that uses the PIcon (Oxygen) styles.',
+            type: 'info',
+            history: {
+                menu: true
+            }
+        });
+        //$.pnotify({ type: "info", text: this.divTeste1.text(), title: "info" });
     }
     WarningAlert() {
-        $.pnotify({ type: "error", text: "error", title: "error" });
+        new PNotify({
+            title: 'PIcon',
+            text: 'I have an icon that uses the PIcon (Oxygen) styles.',
+            type: 'notice',
+            history: {
+                menu: true
+            }
+        });
+        //$.pnotify({ type: "warning", text: "warning", title: "warning" });
     }
     SuccessAlert() {
-        $.pnotify({ type: "success", text: "success", title: "success" });
+        new PNotify({
+            title: 'PIcon',
+            text: 'I have an icon that uses the PIcon (Oxygen) styles.',
+            type: 'success',
+            history: {
+                menu: true
+            }
+        });
+        //$.pnotify({ type: "success", text: "success", title: "success" });
     }
     ErrorAlert() {
-        $.pnotify({ type: "success", text: "success", title: "success" });
+        new PNotify({
+            title: 'PIcon',
+            text: 'I have an icon that uses the PIcon (Oxygen) styles.',
+            type: 'error',
+            history: {
+                menu: true
+            }
+        });
+        //$.pnotify({ type: "danger", text: "danger", title: "danger" });
     }
 }
 
 var obj = new Index();
-//obj.InfoAlert();
-//obj.WarningAlert();
-//obj.SuccessAlert();
-//obj.ErrorAlert()
+obj.InfoAlert();
+obj.WarningAlert();
+obj.SuccessAlert();
+obj.ErrorAlert();
 obj.InfoAlert2();
 obj.WarningAlert2();
 obj.SuccessAlert2();
