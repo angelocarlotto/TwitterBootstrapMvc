@@ -6,36 +6,37 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="~/Content/jquery.pnotify.css" rel="stylesheet" />
+    <link href="~/Content/jquery.pnotify.icons.css" rel="stylesheet" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
-    <script src="~/Scripts/jquery-2.1.1.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-        </div>
-    </div>
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
-
+    <script src="~/Scripts/jquery-2.1.1.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery.pnotify.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Scripts/DataTables-1.10.3/jquery.dataTables.js"></script>
+    <script src="~/Scripts/DataTables-1.10.3/dataTables.tableTools.js"></script>
+    <script src="~/Scripts/DataTables-1.10.3/dataTables.scroller.js"></script>
+    <script src="~/Scripts/DataTables-1.10.3/dataTables.responsive.js"></script>
+    <script src="~/Scripts/DataTables-1.10.3/dataTables.keyTable.js"></script>
+    <script src="~/Scripts/DataTables-1.10.3/dataTables.foundation.js"></script>
+    <script src="~/Scripts/DataTables-1.10.3/dataTables.fixedHeader.js"></script>
+    <script src="~/Scripts/DataTables-1.10.3/dataTables.fixedColumns.js"></script>
+    <script src="~/Scripts/DataTables-1.10.3/dataTables.colVis.js"></script>
+    <script src="~/Scripts/DataTables-1.10.3/dataTables.colReorder.js"></script>
+    <script src="~/Scripts/DataTables-1.10.3/dataTables.bootstrap.js"></script>
+    <script src="~/Scripts/DataTables-1.10.3/dataTables.autoFill.js"></script>
+    @RenderSection("InLineJavaScript",false)
     
 </body>
 </html>

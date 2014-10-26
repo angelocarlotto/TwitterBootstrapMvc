@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -21,6 +22,7 @@
     <IISExpressUseClassicPipelineMode />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -88,10 +90,71 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.autoFill.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.autoFill.min.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.colReorder.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.colReorder.min.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.colVis.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.colvis.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.colVis.min.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.fixedColumns.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.fixedColumns.min.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.fixedHeader.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.fixedHeader.min.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.keyTable.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.keyTable.min.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.responsive.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.scroller.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.scroller.min.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.tableTools.css" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.tableTools.min.css" />
+    <Content Include="Content\DataTables-1.10.3\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables-1.10.3\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables-1.10.3\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables-1.10.3\images\background.png" />
+    <Content Include="Content\DataTables-1.10.3\images\back_disabled.png" />
+    <Content Include="Content\DataTables-1.10.3\images\back_enabled.png" />
+    <Content Include="Content\DataTables-1.10.3\images\back_enabled_hover.png" />
+    <Content Include="Content\DataTables-1.10.3\images\collection.png" />
+    <Content Include="Content\DataTables-1.10.3\images\collection_hover.png" />
+    <Content Include="Content\DataTables-1.10.3\images\copy.png" />
+    <Content Include="Content\DataTables-1.10.3\images\copy_hover.png" />
+    <Content Include="Content\DataTables-1.10.3\images\csv.png" />
+    <Content Include="Content\DataTables-1.10.3\images\csv_hover.png" />
+    <Content Include="Content\DataTables-1.10.3\images\details_close.png" />
+    <Content Include="Content\DataTables-1.10.3\images\details_open.png" />
+    <Content Include="Content\DataTables-1.10.3\images\filler.png" />
+    <Content Include="Content\DataTables-1.10.3\images\forward_disabled.png" />
+    <Content Include="Content\DataTables-1.10.3\images\forward_enabled.png" />
+    <Content Include="Content\DataTables-1.10.3\images\forward_enabled_hover.png" />
+    <Content Include="Content\DataTables-1.10.3\images\insert.png" />
+    <Content Include="Content\DataTables-1.10.3\images\loading-background.png" />
+    <Content Include="Content\DataTables-1.10.3\images\pdf.png" />
+    <Content Include="Content\DataTables-1.10.3\images\pdf_hover.png" />
+    <Content Include="Content\DataTables-1.10.3\images\print.png" />
+    <Content Include="Content\DataTables-1.10.3\images\print_hover.png" />
+    <Content Include="Content\DataTables-1.10.3\images\sort_asc.png" />
+    <Content Include="Content\DataTables-1.10.3\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables-1.10.3\images\sort_both.png" />
+    <Content Include="Content\DataTables-1.10.3\images\sort_desc.png" />
+    <Content Include="Content\DataTables-1.10.3\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables-1.10.3\images\xls.png" />
+    <Content Include="Content\DataTables-1.10.3\images\xls_hover.png" />
+    <Content Include="Content\DataTables-1.10.3\swf\copy_csv_xls.swf" />
+    <Content Include="Content\DataTables-1.10.3\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\jquery.pnotify.css" />
+    <Content Include="Content\jquery.pnotify.icons.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -102,9 +165,43 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.responsive.scss" />
+    <Content Include="Content\DataTables-1.10.3\css\dataTables.jqueryui.scss" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.colVis.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.colVis.min.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.tableTools.js" />
+    <Content Include="Scripts\DataTables-1.10.3\dataTables.tableTools.min.js" />
+    <Content Include="Scripts\DataTables-1.10.3\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables-1.10.3\jquery.dataTables.min.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery.pnotify.js" />
+    <Content Include="Scripts\jquery.pnotify.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
@@ -140,11 +237,19 @@
       <Name>TwitterBootstrapMVC</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\typings\bootstrap\bootstrap.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery.dataTables\jquery.dataTables.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery.pnotify\jquery.pnotify.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="TypeScript\Home\Index.ts" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
