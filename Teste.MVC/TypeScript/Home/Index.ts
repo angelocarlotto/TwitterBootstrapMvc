@@ -7,9 +7,81 @@ class Index {
     private divTeste2: JQuery = $("#divTeste2");
     private divTeste3: JQuery = $("#divTeste3");
     private divTeste4: JQuery = $("#divTeste4");
+    private lnkTeste1: JQuery = $("#lnkTeste1");
+    private lnkTeste2: JQuery = $("#lnkTeste2");
+    private lnkTeste3: JQuery = $("#lnkTeste3");
 
     constructor() {
-        
+        $([this.lnkTeste1]).editable({
+            mode: "inline",
+            send: "always",
+            type: "text",
+            url: "http://localhost:42692/Home/Sucesso",
+            ajaxOptions: {
+                type: 'GET',
+                dataType: 'json'
+            },
+            success: function (response, newValue) {
+                newValue = response.newValue;
+                if (!response.success) return response.newValue;
+            },
+            error: function (response, newValue) {
+                if (response.status === 500) {
+                    return 'Service unavailable. Please try later.';
+                } else {
+                    return response.responseText;
+                }
+            }
+        });
+
+        $([this.lnkTeste2]).editable({
+            mode: "inline",
+            send: "always",
+            type: "text",
+            url: "http://localhost:42692/Home/Erro",
+            ajaxOptions: {
+                type: 'GET',
+                dataType: 'json'
+            },
+            success: function (response, newValue) {
+                newValue = response.newValue;
+                if (!response.success) return response.newValue;
+            },
+            error: function (response, newValue) {
+                if (response.status === 500) {
+                    return 'Service unavailable. Please try later.';
+                } else {
+                    return response.responseText;
+                }
+            }
+        });
+
+        $([this.lnkTeste3]).editable({
+            mode: "inline",
+            send: "always",
+            showbuttons: true,
+            type: "text",
+            url: "http://localhost:42692/Home/Sucesso2",
+            ajaxOptions: {
+                type: 'GET',
+                dataType: 'json'
+            },
+            success: function (response, newValue) {
+
+                if (response.success) {
+                    newValue = response.newValue;
+                     return response.newValue
+                };
+            },
+            error: function (response, newValue) {
+                if (response.status === 500) {
+                    return 'Service unavailable. Please try later.';
+                } else {
+                    return response.responseText;
+                }
+            }
+        });
+
     }
 
     InfoAlert2() {
@@ -37,16 +109,16 @@ class Index {
     SuccessAlert() {
         $.pnotify({ type: "success", text: "success", title: "success" });
     }
-   ErrorAlert() {
+    ErrorAlert() {
         $.pnotify({ type: "success", text: "success", title: "success" });
     }
 }
 
 var obj = new Index();
-obj.InfoAlert();
-obj.WarningAlert();
-obj.SuccessAlert();
-obj.ErrorAlert()
+//obj.InfoAlert();
+//obj.WarningAlert();
+//obj.SuccessAlert();
+//obj.ErrorAlert()
 obj.InfoAlert2();
 obj.WarningAlert2();
 obj.SuccessAlert2();
