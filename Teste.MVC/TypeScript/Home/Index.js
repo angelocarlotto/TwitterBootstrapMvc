@@ -19,6 +19,23 @@ var Index = (function () {
         this.lnkTeste1 = $("#lnkTeste1");
         this.lnkTeste2 = $("#lnkTeste2");
         this.lnkTeste3 = $("#lnkTeste3");
+        this.divTeste5 = $("#divTeste5");
+        this.drpTeste2 = $("#drpTeste2");
+        var preload_data = new Array();
+        preload_data.push({ id: 1, text: "um", locked: true, disabled: true });
+        preload_data.push({ id: 2, text: "dois" });
+        preload_data.push({ id: 3, text: "tres" });
+        preload_data.push({ id: 4, text: "quatro" });
+        preload_data.push({ id: 5, text: "cinco" });
+        preload_data.push({ id: 6, text: "seis" });
+        preload_data.push({ id: 7, text: "sete" });
+
+        this.divTeste5.select2({
+            multiple: false,
+            closeOnSelect: true,
+            data: preload_data
+        });
+
         $([this.lnkTeste1]).editable({
             mode: "inline",
             send: "always",
@@ -154,13 +171,13 @@ var Index = (function () {
     return Index;
 })();
 
-var obj = new Index();
-obj.InfoAlert();
-obj.WarningAlert();
-obj.SuccessAlert();
-obj.ErrorAlert();
-obj.InfoAlert2();
-obj.WarningAlert2();
-obj.SuccessAlert2();
-obj.ErrorAlert2();
+var model = new Index();
+model.InfoAlert();
+model.WarningAlert();
+model.SuccessAlert();
+model.ErrorAlert();
+model.InfoAlert2();
+model.WarningAlert2();
+model.SuccessAlert2();
+model.ErrorAlert2();
 //# sourceMappingURL=Index.js.map

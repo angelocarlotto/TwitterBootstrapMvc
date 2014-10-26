@@ -6,23 +6,23 @@ using System.Web.Mvc;
 
 namespace Teste.MVC.Controllers
 {
-    public class HomeController : Controller
+    public partial class HomeController : Controller
     {
         // GET: Home
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             return View();
         }
 
-        public JsonResult Sucesso()
+        public virtual JsonResult Sucesso()
         {
             return Json(new  {success= true},JsonRequestBehavior.AllowGet);
         }
-        public JsonResult Erro()
+        public virtual JsonResult Erro()
         {
             return Json(new { success = false, msg = "server error" }, JsonRequestBehavior.AllowGet);
         }
-        public JsonResult Sucesso2()
+        public virtual JsonResult Sucesso2()
         {
             return Json(new { success = true, newValue = 222 }, JsonRequestBehavior.AllowGet);
         }
