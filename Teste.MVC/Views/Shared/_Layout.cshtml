@@ -9,7 +9,7 @@
     <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
     <link href="~/Content/pnotify.custom.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet" />
-    <link href="~/Content/DataTables-1.10.3/css/jquery.dataTables.css" rel="stylesheet" />
+    @*<link href="~/Content/DataTables-1.10.3/css/jquery.dataTables.css" rel="stylesheet" />
     <link href="~/Content/DataTables-1.10.3/css/dataTables.tableTools.css" rel="stylesheet" />
     <link href="~/Content/DataTables-1.10.3/css/dataTables.scroller.css" rel="stylesheet" />
     <link href="~/Content/DataTables-1.10.3/css/dataTables.responsive.css" rel="stylesheet" />
@@ -20,9 +20,10 @@
     <link href="~/Content/DataTables-1.10.3/css/dataTables.colVis.css" rel="stylesheet" />
     <link href="~/Content/DataTables-1.10.3/css/dataTables.colReorder.css" rel="stylesheet" />
     <link href="~/Content/DataTables-1.10.3/css/dataTables.bootstrap.css" rel="stylesheet" />
-    <link href="~/Content/DataTables-1.10.3/css/dataTables.autoFill.css" rel="stylesheet" />
+    <link href="~/Content/DataTables-1.10.3/css/dataTables.autoFill.css" rel="stylesheet" />*@
     <link href="~/Content/css/select2.css" rel="stylesheet" />
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    @*<script src="~/Scripts/modernizr-2.8.3.js"></script>*@
+    @*<script src="~/Scripts/r.js"></script>*@
 
 </head>
 <body>
@@ -30,7 +31,8 @@
     <div class="container body-content">
         @RenderBody()
     </div>
-    <script src="~/Scripts/jquery-2.1.1.js"></script>
+    <script data-main="TypeScript/Home/Main" src="scripts/require.js"></script>
+    @*<script src="~/Scripts/jquery-2.1.1.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
     <script src="~/Scripts/pnotify.custom.js"></script>
     <script src="~/Scripts/jquery.validate.js"></script>
@@ -49,7 +51,7 @@
     <script src="~/Scripts/DataTables-1.10.3/dataTables.bootstrap.js"></script>
     <script src="~/Scripts/DataTables-1.10.3/dataTables.autoFill.js"></script>
     <script src="~/Scripts/bootstrap-editable.js"></script>
-    <script src="~/Scripts/select2.js"></script>
+    <script src="~/Scripts/select2.js"></script>*@
     @RenderSection("InLineJavaScript", false)
 
 </body>

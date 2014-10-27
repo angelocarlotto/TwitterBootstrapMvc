@@ -57,6 +57,12 @@ namespace Teste.MVC.Controllers
             return RedirectToActionPermanent(taskResult.Result);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public virtual System.Web.Mvc.JsonResult TesteMetodo()
+        {
+            return new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.TesteMetodo);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public HomeController Actions { get { return MVC2.Home; } }
@@ -74,6 +80,7 @@ namespace Teste.MVC.Controllers
         public class ActionNamesClass
         {
             public readonly string Index = "Index";
+            public readonly string TesteMetodo = "TesteMetodo";
             public readonly string Sucesso = "Sucesso";
             public readonly string Erro = "Erro";
             public readonly string Sucesso2 = "Sucesso2";
@@ -83,12 +90,21 @@ namespace Teste.MVC.Controllers
         public class ActionNameConstants
         {
             public const string Index = "Index";
+            public const string TesteMetodo = "TesteMetodo";
             public const string Sucesso = "Sucesso";
             public const string Erro = "Erro";
             public const string Sucesso2 = "Sucesso2";
         }
 
 
+        static readonly ActionParamsClass_TesteMetodo s_params_TesteMetodo = new ActionParamsClass_TesteMetodo();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_TesteMetodo TesteMetodoParams { get { return s_params_TesteMetodo; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_TesteMetodo
+        {
+            public readonly string msg = "msg";
+        }
         static readonly ViewsClass s_views = new ViewsClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewsClass Views { get { return s_views; } }
@@ -118,6 +134,18 @@ namespace Teste.MVC.Controllers
         {
             var callInfo = new T4MVC_System_Web_Mvc_ActionResult(Area, Name, ActionNames.Index);
             IndexOverride(callInfo);
+            return callInfo;
+        }
+
+        [NonAction]
+        partial void TesteMetodoOverride(T4MVC_System_Web_Mvc_JsonResult callInfo, string msg);
+
+        [NonAction]
+        public override System.Web.Mvc.JsonResult TesteMetodo(string msg)
+        {
+            var callInfo = new T4MVC_System_Web_Mvc_JsonResult(Area, Name, ActionNames.TesteMetodo);
+            ModelUnbinderHelpers.AddRouteValues(callInfo.RouteValueDictionary, "msg", msg);
+            TesteMetodoOverride(callInfo, msg);
             return callInfo;
         }
 

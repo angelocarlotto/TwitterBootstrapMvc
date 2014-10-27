@@ -1,4 +1,5 @@
-﻿/// <reference path="../../scripts/typings/jquery/jquery.d.ts" />
+﻿/// <reference path="../../scripts/typings/requirejs/require.d.ts" />
+/// <reference path="../../scripts/typings/jquery/jquery.d.ts" />
 /// <reference path="../../scripts/typings/bootstrap/bootstrap.d.ts" />
 /// <reference path="../../scripts/typings/jquery.pnotify/jquery.pnotify.d.ts" />
 /// <reference path="../../scripts/typings/jquery.datatables/jquery.datatables.d.ts" />
@@ -6,7 +7,7 @@
 
 interface JQuery {
 
-    editable(params: optionsEditable): JQuery;
+    editable(params?: optionsEditable): JQuery;
 }
 interface optionsEditable {
     title?: any;
@@ -91,7 +92,8 @@ class Index {
     public lnkTeste3: JQuery = $("#lnkTeste3");
     public divTeste5: JQuery = $("#divTeste5");
     public drpTeste2: JQuery = $("#drpTeste2");
-    
+    public divTeste6: JQuery = $("#divTeste6");
+    public btnTeste2: JQuery = $("<button type='button' class='close' data-dismiss ='alert' ><span aria-hidden ='true'>×</span><span class='sr-only'>Close</span></button>");
     constructor() {
 
         var preload_data = new Array<any>();
@@ -107,7 +109,7 @@ class Index {
         this.divTeste5.select2({
             multiple: false,
             closeOnSelect:true,
-            data: preload_data//,
+            data: preload_data
         });
 
         $([this.lnkTeste1]).editable({
@@ -183,20 +185,16 @@ class Index {
     }
 
     InfoAlert2() {
-        this.divTeste1.alert().addClass("alert alert-info");
-        this.divTeste1.text("assadsad");
+        this.divTeste1.text("1").append(this.btnTeste2.clone()).addClass("alert alert-info ").alert();
     }
     WarningAlert2() {
-        this.divTeste2.alert().addClass("alert alert-warning");
-        this.divTeste2.text("assadsad");
+        this.divTeste2.text("2").append(this.btnTeste2.clone()).addClass("alert alert-warning").alert();
     }
     SuccessAlert2() {
-        this.divTeste3.alert().addClass("alert alert-success");
-        this.divTeste3.text("assadsad");
+        this.divTeste3.text("3").append(this.btnTeste2.clone()).addClass("alert alert-success").alert();
     }
     ErrorAlert2() {
-        this.divTeste4.alert().addClass("alert alert-danger");
-        this.divTeste4.text("assadsad");
+        this.divTeste4.text("4").append(this.btnTeste2.clone()).addClass("alert alert-danger").alert();
     }
     InfoAlert() {
         new PNotify({
@@ -245,11 +243,12 @@ class Index {
 }
 
 var model = new Index();
-model.InfoAlert();
-model.WarningAlert();
-model.SuccessAlert();
-model.ErrorAlert();
+//model.InfoAlert();
+//model.WarningAlert();
+//model.SuccessAlert();
+//model.ErrorAlert();
 model.InfoAlert2();
 model.WarningAlert2();
 model.SuccessAlert2();
 model.ErrorAlert2();
+

@@ -43,6 +43,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RequireJsNet">
+      <HintPath>..\packages\RequireJsNet.2.0.38.0\lib\net40\RequireJsNet.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -223,6 +230,8 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\pnotify.custom.js" />
     <Content Include="Scripts\pnotify.custom.min.js" />
+    <Content Include="Scripts\r.js" />
+    <Content Include="Scripts\require.js" />
     <Content Include="Scripts\Select2-locales\select2_locale_ar.js" />
     <Content Include="Scripts\Select2-locales\select2_locale_az.js" />
     <Content Include="Scripts\Select2-locales\select2_locale_bg.js" />
@@ -342,7 +351,9 @@
     <TypeScriptCompile Include="Scripts\typings\jquery.dataTables\jquery.dataTables.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery.pnotify\jquery.pnotify.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="Scripts\typings\requirejs\require.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\select2\select2.d.ts" />
+    <TypeScriptCompile Include="TypeScript\Home\Main.ts" />
     <TypeScriptCompile Include="TypeScript\Home\Index.ts" />
   </ItemGroup>
   <ItemGroup>

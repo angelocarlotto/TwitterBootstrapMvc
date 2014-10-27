@@ -1,4 +1,5 @@
-﻿/// <reference path="../../scripts/typings/jquery/jquery.d.ts" />
+﻿/// <reference path="../../scripts/typings/requirejs/require.d.ts" />
+/// <reference path="../../scripts/typings/jquery/jquery.d.ts" />
 /// <reference path="../../scripts/typings/bootstrap/bootstrap.d.ts" />
 /// <reference path="../../scripts/typings/jquery.pnotify/jquery.pnotify.d.ts" />
 /// <reference path="../../scripts/typings/jquery.datatables/jquery.datatables.d.ts" />
@@ -21,6 +22,8 @@ var Index = (function () {
         this.lnkTeste3 = $("#lnkTeste3");
         this.divTeste5 = $("#divTeste5");
         this.drpTeste2 = $("#drpTeste2");
+        this.divTeste6 = $("#divTeste6");
+        this.btnTeste2 = $("<button type='button' class='close' data-dismiss ='alert' ><span aria-hidden ='true'>×</span><span class='sr-only'>Close</span></button>");
         var preload_data = new Array();
         preload_data.push({ id: 1, text: "um", locked: true, disabled: true });
         preload_data.push({ id: 2, text: "dois" });
@@ -109,20 +112,16 @@ var Index = (function () {
         });
     }
     Index.prototype.InfoAlert2 = function () {
-        this.divTeste1.alert().addClass("alert alert-info");
-        this.divTeste1.text("assadsad");
+        this.divTeste1.text("1").append(this.btnTeste2.clone()).addClass("alert alert-info ").alert();
     };
     Index.prototype.WarningAlert2 = function () {
-        this.divTeste2.alert().addClass("alert alert-warning");
-        this.divTeste2.text("assadsad");
+        this.divTeste2.text("2").append(this.btnTeste2.clone()).addClass("alert alert-warning").alert();
     };
     Index.prototype.SuccessAlert2 = function () {
-        this.divTeste3.alert().addClass("alert alert-success");
-        this.divTeste3.text("assadsad");
+        this.divTeste3.text("3").append(this.btnTeste2.clone()).addClass("alert alert-success").alert();
     };
     Index.prototype.ErrorAlert2 = function () {
-        this.divTeste4.alert().addClass("alert alert-danger");
-        this.divTeste4.text("assadsad");
+        this.divTeste4.text("4").append(this.btnTeste2.clone()).addClass("alert alert-danger").alert();
     };
     Index.prototype.InfoAlert = function () {
         new PNotify({
@@ -172,10 +171,11 @@ var Index = (function () {
 })();
 
 var model = new Index();
-model.InfoAlert();
-model.WarningAlert();
-model.SuccessAlert();
-model.ErrorAlert();
+
+//model.InfoAlert();
+//model.WarningAlert();
+//model.SuccessAlert();
+//model.ErrorAlert();
 model.InfoAlert2();
 model.WarningAlert2();
 model.SuccessAlert2();

@@ -14,6 +14,11 @@ namespace Teste.MVC.Controllers
             return View();
         }
 
+        public virtual JsonResult TesteMetodo(string msg)
+        {
+            return Json( msg , JsonRequestBehavior.AllowGet);
+        }
+
         public virtual JsonResult Sucesso()
         {
             return Json(new  {success= true},JsonRequestBehavior.AllowGet);

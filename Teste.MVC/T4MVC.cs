@@ -141,6 +141,8 @@ namespace Links
         public static readonly string modernizr_2_8_3_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/modernizr-2.8.3.min.js") ? Url("modernizr-2.8.3.min.js") : Url("modernizr-2.8.3.js");
         public static readonly string pnotify_custom_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/pnotify.custom.min.js") ? Url("pnotify.custom.min.js") : Url("pnotify.custom.js");
         public static readonly string pnotify_custom_min_js = Url("pnotify.custom.min.js");
+        public static readonly string r_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/r.min.js") ? Url("r.min.js") : Url("r.js");
+        public static readonly string require_js = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/require.min.js") ? Url("require.min.js") : Url("require.js");
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public static class Select2_locales {
             private const string URLPATH = "~/Scripts/Select2-locales";
@@ -231,6 +233,14 @@ namespace Links
                 public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
                 public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
                 public static readonly string jquery_pnotify_d_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/jquery.pnotify.d.min.js") ? Url("jquery.pnotify.d.min.js") : Url("jquery.pnotify.d.js");
+            }
+        
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class requirejs {
+                private const string URLPATH = "~/Scripts/typings/requirejs";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+                public static readonly string require_d_ts = T4MVCHelpers.IsProduction() && T4Extensions.FileExists(URLPATH + "/require.d.min.js") ? Url("require.d.min.js") : Url("require.d.js");
             }
         
             [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
